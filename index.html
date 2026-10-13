@@ -546,7 +546,7 @@ img { max-width: 100%; display: block; }
     <button type="button" id="next" class="nav-btn primary" aria-label="Next page"><span>Next</span> ›</button>
   </nav>
 </div>
-<noscript><p style="position:fixed;inset:0;display:grid;place-items:center;color:#f6ecd9;background:#0b0708;text-align:center;padding:24px">This little world needs JavaScript. Please turn it on, my girl.</p></noscript>
+<noscript><p style="position:fixed;inset:0;display:grid;place-items:center;color:#f6ecd9;background:#0b0708;text-align:center;padding:24px">This little world needs JavaScript. Please turn it on.</p></noscript>
 <script>
 // All the words on the site live here, so they are easy to read and edit.
 // Photo paths are relative to the site root (public/assets/...).
@@ -565,9 +565,9 @@ const openingNote = [
   'My Allaiha,',
   'Today is the day the world was gifted someone who would unknowingly become such a beautiful part of my world. I wish I could put every feeling I have for you into words, but even an entire book wasn’t enough.',
   'So, today, I made you a little world of your own.',
-  'Take your time, my girl. Every page was made with you in mind.',
-  'Happy Birthday, my Jaanu. ❤️',
-  '— Yours, Shah',
+  'Take your time. Every page was made with you in mind.',
+  'Happy Birthday, Allaiha. ❤️',
+  '— Yours, Anam',
 ]
 
 /* ---------------- PAGE 2 ---------------- */
@@ -704,7 +704,7 @@ const prayerClosing =
 /* ---------------- PAGE 5 ---------------- */
 const letter = [
   { kind: 'salute', text: 'My Allaiha,' },
-  { kind: 'p', text: 'Happy Birthday, my Jaanu.' },
+  { kind: 'p', text: 'Happy Birthday, Allaiha.' },
   { kind: 'p', text: 'If there is one thing I wish for you today, it is that life finally becomes as gentle with you as your heart has always been with others.' },
   { kind: 'p', text: 'May Allah bless you with endless happiness, peace, good health, and every beautiful thing your heart has ever prayed for. May He protect your beautiful heart, ease every worry you carry silently, and give you a thousand reasons to smile every single day.' },
   { kind: 'p', text: 'You have no idea how special your existence is to me. It isn’t just your beautiful eyes, your smile, your curls, or your adorable little habits. It is you — your heart, your softness, your stubbornness, your dreams, and the way you make even the most ordinary moments feel unforgettable.' },
@@ -712,14 +712,14 @@ const letter = [
   { kind: 'p', text: 'I hope this new chapter of your life brings you closer to becoming the doctor you dream of being, takes you to all the beautiful places you wish to see, brings you closer to your dreams of Umrah, and fills your life with the kind of happiness you never have to pretend to feel.' },
   { kind: 'p', text: 'You deserve a love that feels safe, a heart that feels at peace, and a life filled with little moments that make you genuinely happy.' },
   { kind: 'p', text: 'And if there is one thing I want you to remember today, it is this: you have always been worth loving, worth choosing, and worth celebrating. Not because of what you do for anyone, but simply because you are you.' },
-  { kind: 'p', text: 'Happy Birthday, my beautiful girl.' },
+  { kind: 'p', text: 'Happy Birthday once again.' },
   { kind: 'p', text: 'May this year be kinder to you. May your eyes shed more tears of happiness than sadness, and may that precious smile of yours never run out of reasons to exist.' },
   { kind: 'p', text: 'No matter how many birthdays pass, I hope you never forget how beautifully your existence has touched my world.' },
   { kind: 'big', text: 'You were never just another person in my story, Allaiha.' },
   { kind: 'big', text: 'You became a world of your own.' },
-  { kind: 'p', text: 'Happy Birthday, my Qalb.' },
+  { kind: 'p', text: 'Happy Birthday.' },
   { kind: 'p', text: 'I love you.' },
-  { kind: 'sign', text: 'Forever with affection,', name: 'Shah ❤️' },
+  { kind: 'sign', text: 'Forever with affection,', name: 'Anam ❤️' },
 ]
 
 const postscript =
@@ -776,7 +776,7 @@ const finalMessage = [
   'If I could make one wish for you today, it would be that you never have to question whether you are worthy of happiness. I hope you become everything you dream of becoming, see every place you dream of seeing, and experience the kind of peace that makes your heart feel at home.',
   'Happy Birthday, my Allaiha.',
   'Thank you for being you.',
-  '— Shah ❤️',
+  '— Anam ❤️',
 ]
 
 // Background music.
@@ -1056,19 +1056,19 @@ function createMusic(onChange) {
 
   /* ---------- Page 1 ---------- */
   function wishZone() {
-    if (!ui.wished) return '<div class="stack"><button type="button" class="btn gold" data-act="wish">✦ Make a Wish, Jaanu</button><p class="hint">or tap each candle to blow it out</p></div>';
+    if (!ui.wished) return '<div class="stack"><button type="button" class="btn gold" data-act="wish">✦ Make a Wish</button><p class="hint">or tap each candle to blow it out</p></div>';
     return '<div class="stack fade-up" aria-live="polite"><p class="wish-msg">' + wishMessage + '</p>' +
       (ui.surprise ? '' : '<button type="button" class="btn gold" data-act="surprise">🎁 Open Your Little Surprise</button>') + '</div>';
   }
   function noteCard() {
-    return '<article class="note-card" aria-label="A birthday note from Shah">' + openingNote.map(function (l, i) {
+    return '<article class="note-card" aria-label="A birthday note from Anam">' + openingNote.map(function (l, i) {
       var cls = i === 0 ? 'note-salute' : i === openingNote.length - 1 ? 'note-sign' : '';
       return '<p class="' + cls + '" style="animation-delay:' + (0.5 + i * 0.35) + 's">' + l + '</p>';
     }).join('') + '</article>';
   }
   function envelope(open) {
     return '<button type="button" class="envelope ' + (open ? 'open' : '') + '" id="envelope" data-act="openenv" aria-expanded="' + !!open + '" aria-label="Open the envelope: To My World, Allaiha">' +
-      '<span class="env-back"></span><span class="env-paper"></span><span class="env-front"></span><span class="env-to">To My World, Allaiha</span><span class="env-flap"></span><span class="env-seal" aria-hidden="true">S ♥ A</span></button>';
+      '<span class="env-back"></span><span class="env-paper"></span><span class="env-front"></span><span class="env-to">To My World, Allaiha</span><span class="env-flap"></span><span class="env-seal" aria-hidden="true">A &amp; A</span></button>';
   }
   function envZone() {
     if (!ui.surprise) return '';
@@ -1160,7 +1160,7 @@ function createMusic(onChange) {
   }
   function p4() {
     var op = ui.opened4 || [];
-    return '<div class="page-scroll night"><div class="page page4"><p class="eyebrow">04 · Everything I wish for you</p><h2 class="title">A Little Prayer for My Girl</h2><div class="rule" aria-hidden="true"><span>☾</span></div>' +
+    return '<div class="page-scroll night"><div class="page page4"><p class="eyebrow">04 · Everything I wish for you</p><h2 class="title">A Little Prayer for You</h2><div class="rule" aria-hidden="true"><span>☾</span></div>' +
       reveal('p', 'prose center', prayerIntro) + '<div class="sky" data-noswipe="true"><span class="moon" aria-hidden="true" style="font-size:2.6rem;line-height:1">☾</span>' +
       wishes.map(function (w, i) {
         return '<button type="button" class="wish-star ' + (op.indexOf(w.id) > -1 ? 'seen' : '') + ' ' + (ui.wish4 === w.id ? 'on' : '') + '" data-act="star" data-id="' + w.id + '" style="left:' + w.x + '%;top:' + w.y + '%;animation-delay:' + i * 0.35 + 's" aria-pressed="' + (ui.wish4 === w.id) + '" aria-label="Wish ' + w.id + ' of 10: ' + w.title + '"><span class="glyph" aria-hidden="true">★</span></button>';
@@ -1180,11 +1180,11 @@ function createMusic(onChange) {
       return reveal('p', 'l-p', l.text);
     }).join('');
     return '<div class="page-scroll"><div class="page page5"><p class="eyebrow">05 · My letter to you</p><h2 class="title">For You, On Your Birthday</h2><div class="rule" aria-hidden="true"><span>❦</span></div>' +
-      '<article class="letter" aria-label="A birthday letter from Shah to Allaiha"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>' + body +
-      reveal('div', 'seal-row', '<div class="seal" role="img" aria-label="Wax seal with the initials S and A"><span>S ♥ A</span></div>') + '</article>' +
+      '<article class="letter" aria-label="A birthday letter from Anam to Allaiha"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>' + body +
+      reveal('div', 'seal-row', '<div class="seal" role="img" aria-label="Wax seal with the initials A and A"><span>A &amp; A</span></div>') + '</article>' +
       '<div class="stack" data-noswipe="true" id="psZone">' + psHTML() + '</div></div></div>';
   }
-  function psHTML() { return ui.ps ? '<p class="postscript fade-up">' + postscript + '</p>' : '<button type="button" class="btn gold" data-act="ps">A Little More, My Love</button>'; }
+  function psHTML() { return ui.ps ? '<p class="postscript fade-up">' + postscript + '</p>' : '<button type="button" class="btn gold" data-act="ps">A Little More</button>'; }
 
   /* ---------- Page 6 ---------- */
   function finalHTML() {
@@ -1194,7 +1194,7 @@ function createMusic(onChange) {
   }
   function p6() {
     return '<div class="page-scroll"><div class="page page6"><p class="eyebrow">06 · Four photographs</p><h2 class="title">Four Little Windows Into My Favourite World</h2>' +
-      '<p class="subtitle small">Every photograph holds a little piece of you. Tap each one, my girl, and let me tell you what I see.</p><div class="gallery" data-noswipe="true">' +
+      '<p class="subtitle small">Every photograph holds a little piece of you. Tap each one, and let me tell you what I see.</p><div class="gallery" data-noswipe="true">' +
       photos.map(function (p, i) {
         return '<button type="button" class="photo-card" data-act="photo" data-i="' + i + '" aria-label="' + p.title + '. Tap to read what I see." style="animation-delay:' + i * 90 + 'ms"><span class="photo-frame">' + imgTag(i) +
           '<span class="photo-tap" aria-hidden="true">♥ tap</span></span><span class="photo-caption"><em>' + p.title + '</em><small>' + p.caption + '</small></span></button>';
